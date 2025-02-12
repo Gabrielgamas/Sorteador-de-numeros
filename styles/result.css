@@ -1,0 +1,36 @@
+.result-content {
+  width: 319px;
+  display: grid;
+  padding-top: 42px;
+  gap: 40px;
+}
+
+.title-result {
+  font: var(--label-sm);
+  text-align: center;
+  font-size: 2;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--content-brand);
+}
+
+.reroll {
+  width: 319px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font: var(--label-sm);
+  cursor: pointer;
+}

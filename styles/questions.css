@@ -1,0 +1,22 @@
+.questions {
+  width: 319px;
+  display: grid;
+  gap: 36px;
+  padding-top: 80px;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: start;
+
+  .title-quest {
+    color: var(--content-brand);
+    font: var(--paragraph-md);
+  }
+  .description-quest {
+    color: var(--content-secondary);
+    font: var(--paragraph-sm);
+  }
+}

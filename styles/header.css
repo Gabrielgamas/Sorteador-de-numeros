@@ -1,0 +1,22 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 46px;
+}
+
+header {
+  display: grid;
+  gap: 8px;
+  width: 319px;
+
+  p {
+    font: var(--overline);
+    background: var(--gradient-content);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1 {
+    font: var(--display-md);
+  }
+}
