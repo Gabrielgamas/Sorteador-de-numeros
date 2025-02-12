@@ -1,6 +1,17 @@
+@media (width>1280px) {
+  .result-content {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reroll {
+    width: 482px !important;
+  }
+}
+
 .result-content {
-  width: 319px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding-top: 42px;
   gap: 40px;
 }
@@ -10,27 +21,122 @@
   text-align: center;
   font-size: 2;
 }
+@keyframes rotate-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.reroll {
+  width: 319px;
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+  height: 56px;
+  padding: 8px;
+  font: var(--label-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.reroll:hover {
+  background-color: var(--bg-secondary);
+}
+
+.reroll::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    to right,
+    #77c0af 0%,
+    #d1dc97 14.84%,
+    #e9a9b3 32.15%,
+    #d586e0 65.79%,
+    #91a1fa 84.58%
+  );
+  background-size: 200% 200%;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reroll:hover::after {
+  opacity: 1;
+  animation: rotate-border 3s linear infinite;
+}
 
 .result {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto Mono", serif;
-  font-size: 48px;
-  font-weight: 700;
+  gap: 15px;
   color: var(--content-brand);
+  flex-wrap: wrap;
+  p {
+    display: flex;
+    width: 84px;
+    height: 84px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    position: relative; /* Necessário para o ::before funcionar */
+    font: 700 4rem/150% var(--roboto-m);
+    animation: textColor 4s ease-in-out;
+  }
 }
 
-.reroll {
-  width: 319px;
-  box-sizing: border-box;
-  padding: 16px;
-  background-color: var(--bg-tertiary);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font: var(--label-sm);
-  cursor: pointer;
+.result p::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Faz o pseudo-elemento cobrir todo o <p> */
+  border-radius: 28px;
+  background-color: transparent;
+  opacity: 1;
+  z-index: -1;
+  animation: spinAndReveal 4s ease-in-out;
+}
+
+@keyframes textColor {
+  0% {
+    color: black;
+  }
+  99% {
+    color: black;
+  }
+  100% {
+    color: #a678d9;
+  }
+}
+
+@keyframes spinAndReveal {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+    background-color: #a678d9;
+    opacity: 1;
+  }
+  99% {
+    transform: rotate(1800deg) scale(1);
+    background-color: #a678d9;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(1800deg) scale(1);
+    background-color: transparent;
+    opacity: 1;
+  }
 }

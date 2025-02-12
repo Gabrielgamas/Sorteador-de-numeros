@@ -1,0 +1,52 @@
+.input-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.input-container input,
+.input-container .roll {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+  height: 40px;
+}
+
+/* 🔹 Borda animada nos inputs */
+.input-container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 1px; /* Agora a borda é mais fina */
+  background: var(--gradient-border);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  animation: animate-border 3s linear infinite;
+}
+
+/* Ativa a borda no hover e focus */
+.input-container:hover::before,
+.input-container:focus-within::before {
+  opacity: 1;
+}
+
+/* 🔹 Animação do gradiente */
+@keyframes animate-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

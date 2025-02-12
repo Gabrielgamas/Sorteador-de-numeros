@@ -1,5 +1,13 @@
+@media (width>1280px) {
+  .form-content {
+    width: 482px;
+  }
+  .roll {
+    width: 482px !important;
+  }
+}
+
 .form-content {
-  width: 319px;
   padding-top: 42px;
   display: grid;
   box-sizing: border-box;
@@ -110,6 +118,15 @@ form {
   }
 }
 
+@keyframes rotate-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 .roll {
   width: 319px;
   background-color: var(--bg-tertiary);
@@ -124,4 +141,38 @@ form {
   margin-top: 40px;
   box-sizing: border-box;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.roll:hover {
+  background-color: var(--bg-secondary);
+}
+
+.roll::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    to right,
+    #77c0af 0%,
+    #d1dc97 14.84%,
+    #e9a9b3 32.15%,
+    #d586e0 65.79%,
+    #91a1fa 84.58%
+  );
+  background-size: 200% 200%;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.roll:hover::after {
+  opacity: 1;
+  animation: rotate-border 3s linear infinite;
 }

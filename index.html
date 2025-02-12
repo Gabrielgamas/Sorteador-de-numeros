@@ -16,76 +16,82 @@
     <div class="logo-container">
       <img src="./assets/logo.svg" alt="Logo da empresa" />
     </div>
-    <header>
-      <p>ONLINE - GRATUITO</p>
-      <h1>SORTEADOR DE NÚMEROS</h1>
-    </header>
-    <section class="form-content" id="form-section">
-      <div class="title-form">
-        <h2>QUERO SORTEAR:</h2>
-        <p>
-          Defina o intervalo e a quantidade de números, clique em "Sortear" e
-          veja os resultados na tela. É rápido e fácil!
-        </p>
-      </div>
-      <form action="">
-        <div class="input-content">
-          <label for="amount">NÚMEROS</label>
-          <input type="number" name="amount" id="amount" />
-        </div>
-        <div class="input-content">
-          <label for="min">DE</label>
-          <input type="number" name="min" id="min" />
-        </div>
-        <div class="input-content">
-          <label for="max">ATÉ</label>
-          <input type="number" name="max" id="max" />
-        </div>
-      </form>
-      <div class="toggle">
-        <label for="repeat" class="switch">
-          <input type="checkbox" name="repeat" id="repeat" />
-          <span class="slider"></span>
-        </label>
-        <p>Não repetir número</p>
-      </div>
-      <button class="roll">
-        SORTEAR <img src="./assets/roll.svg" alt="" />
-      </button>
-    </section>
-    <section class="result-content hidden" id="result-section">
-      <div class="title-result">
-        <h2>RESULTADO DO SORTEIO</h2>
-      </div>
-      <div class="result">
-        <p>25</p>
-      </div>
-      <button class="reroll">
-        SORTEAR NOVAMENTE <img src="./assets/reroll.svg" alt="" />
-      </button>
-    </section>
-    <section class="questions">
-      <div class="question">
-        <img src="./assets/chat.svg" alt="Icone de chat" />
-        <div class="question-txt">
-          <p class="title-quest">Como funciona o sorteador de números?</p>
-          <p class="description-quest">
-            O sorteador utiliza um algoritmo de geração aleatória para criar
-            números dentro do intervalo especificado pelo usuário.
+    <main>
+      <header>
+        <p>ONLINE - GRATUITO</p>
+        <h1>SORTEADOR DE NÚMEROS</h1>
+      </header>
+      <section class="form-content" id="form-section">
+        <div class="title-form">
+          <h2>QUERO SORTEAR:</h2>
+          <p>
+            Defina o intervalo e a quantidade de números, clique em "Sortear" e
+            veja os resultados na tela. É rápido e fácil!
           </p>
         </div>
-      </div>
-      <div class="question">
-        <img src="./assets/chat.svg" alt="Icone de chat" />
-        <div class="question-txt">
-          <p class="title-quest">Posso escolher o intervalo dos números?</p>
-          <p class="description-quest">
-            Sim, você pode definir os valores mínimo e máximo para o intervalo
-            dos números sorteados.
-          </p>
+        <form id="form" action="">
+          <div class="input-content">
+            <label for="amount">NÚMEROS</label>
+            <div class="input-container">
+              <input required type="number" name="amount" id="amount" />
+            </div>
+          </div>
+          <div class="input-content">
+            <label for="min">DE</label>
+            <div class="input-container">
+              <input required type="number" name="min" id="min" />
+            </div>
+          </div>
+          <div class="input-content">
+            <label for="max">ATÉ</label>
+            <div class="input-container">
+              <input required type="number" name="max" id="max" />
+            </div>
+          </div>
+        </form>
+        <div class="toggle">
+          <label for="repeat" class="switch">
+            <input type="checkbox" name="repeat" id="repeat" />
+            <span class="slider"></span>
+          </label>
+          <p>Não repetir número</p>
         </div>
-      </div>
-    </section>
+        <button type="submit" class="roll">
+          SORTEAR <img src="./assets/roll.svg" alt="" />
+        </button>
+      </section>
+      <section class="result-content hidden" id="result-section">
+        <div class="title-result">
+          <h2>RESULTADO DO SORTEIO</h2>
+        </div>
+        <div class="result"></div>
+        <button class="reroll">
+          SORTEAR NOVAMENTE <img src="./assets/reroll.svg" alt="" />
+        </button>
+      </section>
+      <section class="questions">
+        <div class="question">
+          <img src="./assets/chat.svg" alt="Icone de chat" />
+          <div class="question-txt">
+            <p class="title-quest">Como funciona o sorteador de números?</p>
+            <p class="description-quest">
+              O sorteador utiliza um algoritmo de geração aleatória para criar
+              números dentro do intervalo especificado pelo usuário.
+            </p>
+          </div>
+        </div>
+        <div class="question">
+          <img src="./assets/chat.svg" alt="Icone de chat" />
+          <div class="question-txt">
+            <p class="title-quest">Posso escolher o intervalo dos números?</p>
+            <p class="description-quest">
+              Sim, você pode definir os valores mínimo e máximo para o intervalo
+              dos números sorteados.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="./script.js"></script>
   </body>
